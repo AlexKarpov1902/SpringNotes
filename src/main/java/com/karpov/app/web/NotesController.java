@@ -104,9 +104,9 @@ public class NotesController {
                             @RequestParam String name,
                             @RequestParam String description) {
         List<NotesEntity> list = new ArrayList();
-        if (!name.isBlank()) {
+        if (!name.isEmpty()) {
             list = service.getAllByName(name);
-        } else if (!description.isBlank()) {
+        } else if (!description.isEmpty()) {
             list = service.getAllByDescription(description);
         }
         list.forEach(note -> {
